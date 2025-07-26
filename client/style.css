@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.toolbar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  background: white;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+ 
+  white-space: nowrap;
+  max-width: calc(100vw - 200px);
+  z-index: 1000;
+
+  scrollbar-width: none; 
+}
+.toolbar::-webkit-scrollbar {
+  height: 0px;
+}
+.toolbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.toolbar:hover::-webkit-scrollbar {
+  height: 6px;
+}
+.toolbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 4px;
+}
+.toolbar:hover::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#colorPicker{
+    border:2px solid blue;
+position:relative;
+top:10px;
+}
+.toolbar button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+  background-color: #f8f8ff;
+  border: 1px solid grey;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+.toolbar button:hover {
+  background-color: powderblue;
+}
+.toolbar button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+button.active {
+  background-color: powderblue;
+  color: black;
+  border: 1px solid blue;
+  border-radius: 8px;
+}
+#bg-color{
+  border:2px solid blue;
+  position:relative;
+ 
+  width:100%;
+}
+#room {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  z-index: 10;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+#room button {
+  color: white;
+  background-color: blue;
+  border-radius: 8px;
+  border: 2px solid lightblue;
+  padding: 10px;
+  cursor: pointer;
+}
+#room button:hover {
+  color: black;
+  background-color: lightcyan;
+}
+
+#board-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+}
+#board-container.grabbing {
+  cursor: grabbing;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  z-index: 2;
+
+}
+
+
+@media (max-width: 700px) {
+  .toolbar {
+    flex-direction: column;
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    max-height: 80vh;
+    max-width: 80px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+  .toolbar:hover::-webkit-scrollbar {
+    width: 6px;
+  }
+  .toolbar:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.3);
+    border-radius: 4px;
+  }
+
+  #room {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+  #colorPicker{
+
+
+top:0px;
+}
+}

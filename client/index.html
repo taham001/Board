@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whiteboard</title>
+  <link rel="icon" type="image/png" href="assets/icons8-whiteboard-100.png">
+  <link rel="stylesheet" href="style.css">
+<script src="/socket.io/socket.io.js" defer></script>
+
+
+
+
+<script type="module" src="socket.js" defer></script>
+</head>
+<body>
+  
+  <div class="toolbar">
+    <input type="color" id="colorPicker" value="#000000">
+    <input type="range" id="sizePicker" min="1" max="10" value="2">
+    <button id="pan" title="Pan tool">
+  <img src="assets/hand-grabbing.svg" alt="Pan" />
+  Pan
+</button>
+    <button id="move"><img src="assets/arrows-out-cardinal.svg" alt="move"/>Move</button>
+    <button id="resize"><img   src="assets/resize.svg" alt="reasize"/> Resize</button>
+    <button id="pen"><img  src="assets/pen.svg" alt="pen"/> Pen</button>
+    <button id="line"><img  src="assets/line-segment.svg" alt="line"/> Line</button>
+    <button id="curve"><img  src="assets/bezier-curve.svg" alt="curve"/> Curve</button>
+    <button id="rect"><img   src="assets/rectangle.svg" alt="rect"/> Rect</button>
+    <button id="circle"><img  src="assets/circle.svg" alt="circle"/> Circle</button>
+    <button id="oval"><img  src="assets/oval-svgrepo-com.svg" alt="oval"/>Oval</button>
+
+    <button id="text"><img  src="assets/text-aa.svg" alt="test"/> Text</button>
+    <button id="eraser"> <img   src="assets/eraser.svg" alt="eraser"/>Eraser</button>
+    <button id="clear"><img  src="assets/broom.svg" alt="clear"/>Clear</button>
+  </div>
+  <div id="room">
+     <input type="color" id="bg-color" value="#ffffff">  
+<button id="applyBtn">Apply Color</button>
+  <button id="create-room">Create Room</button>
+
+  <button id="join-room">Join Room</button>
+  <button id="delete-room">Delete Room</button>
+</div>
+  
+
+  <div id="board-container">
+    
+     <svg id="svg" xmlns="http://www.w3.org/2000/svg">
+    <g id="svg-viewport"></g>
+  </svg>
+  </div>
+
+ 
+</body>
+</html>
